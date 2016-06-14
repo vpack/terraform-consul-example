@@ -17,3 +17,5 @@ variable "consul_tag_name" {
     default = "consul"
     description = "Name tag for the servers"
 }
+#variable "atlas_token"   {} 
+#variable "atlas_name"    {}

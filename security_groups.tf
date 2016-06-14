@@ -1,6 +1,16 @@
 resource "aws_security_group" "consul" {
     name = "consul"
+    vpc_id      = "${terraform_remote_state.vpc.output.vpc_id}"
     description = "Consul traffic."
+
+    ingress {
+        from_port = 0
+        to_port = 0
+        protocol = "icmp"
+        cidr_blocks = [
+            "0.0.0.0/0", # DANGER change to your IPs only
+        ]
+    }
 
     ingress {
         from_port = 22

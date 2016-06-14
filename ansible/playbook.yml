@@ -12,9 +12,9 @@
     consul_node_name: "{{ ansible_default_ipv4['address'] }}"
     consul_datacenter: "{{ fetch_consul_datacenter.stdout }}"
 
-    consul_atlas_infrastructure: "{{ fetch_atlas_name.stdout }}"
-    consul_atlas_token: "{{ fetch_atlas_token.stdout }}"
-    consul_atlas_join: true
+#    consul_atlas_infrastructure: "{{ fetch_atlas_name.stdout }}"
+#    consul_atlas_token: "{{ fetch_atlas_token.stdout }}"
+    consul_atlas_join: false
 
     consul_is_ui: true
     consul_ui_server_name: "{{ fetch_public_host.stdout }}"
