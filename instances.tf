@@ -27,7 +27,7 @@ resource "aws_instance" "consul_server" {
             "echo Running remote-exec: ",
             "echo ${var.consul_servers_count} > /tmp/consul-server-count",
             "echo ${aws_instance.consul_server.0.private_ip} > /tmp/consul-server-addr",
-            "echo aws-${var.aws_region} > /tmp/consul-datacenter",
+            "echo aws-${var.region} > /tmp/consul-datacenter",
         ]
     }
     

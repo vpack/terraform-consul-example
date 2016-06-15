@@ -20,3 +20,6 @@ plan:
 
 again:
 	ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook --user=ec2-user -i "10.120.106.49," ansible/playbook.yml
+
+clean:
+	rm -v ansible/*.retry

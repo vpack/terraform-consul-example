@@ -1,4 +1,5 @@
-aws_region = "us-east-1"
+environment = "dev"
+region = "us-east-1"
 key_name = "Devops"
 ami = "ami-a4827dc9"
 key_path = "~/.ssh/devops.pem"
