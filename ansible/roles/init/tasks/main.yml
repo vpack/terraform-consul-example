@@ -11,14 +11,6 @@
   shell: cat /opt/consul/server-count
   register: fetch_consul_bootstrap_expect
 
-- name: Fetch Atlas token
-  shell: cat /opt/consul/atlas-token
-  register: fetch_atlas_token
-
-- name: Fetch Atlas name
-  shell: cat /opt/consul/atlas-name
-  register: fetch_atlas_name
-
 - name: Fetch datacenter name
   shell: cat /opt/consul/datacenter
   register: fetch_consul_datacenter

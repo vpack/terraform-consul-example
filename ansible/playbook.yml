@@ -1,8 +1,14 @@
 ---
 - hosts: all
   sudo: true
+  pre_tasks:
+  - set_fact:
+      ansible_distribution_major_version: "6"
+      nginx_user: nginx
   vars:
-    consul_version: 0.6.0
+    consul_use_upstart: false
+    consul_use_initd: true
+    consul_version: 0.6.4
     consul_is_server: true
     consul_join_at_start: true
     consul_servers: ['{{ fetch_consul_ip_address.stdout }}']
@@ -12,12 +18,12 @@
     consul_node_name: "{{ ansible_default_ipv4['address'] }}"
     consul_datacenter: "{{ fetch_consul_datacenter.stdout }}"
 
-#    consul_atlas_infrastructure: "{{ fetch_atlas_name.stdout }}"
-#    consul_atlas_token: "{{ fetch_atlas_token.stdout }}"
-    consul_atlas_join: false
-
     consul_is_ui: true
-    consul_ui_server_name: "{{ fetch_public_host.stdout }}"
+#    consul_ui_server_name: "{{ fetch_public_host.stdout }}"
+
+    consul_install_consulate: true
+    consul_install_dnsmasq: true
+#    consul_install_consul_cli: true
 
   roles:
     - init
